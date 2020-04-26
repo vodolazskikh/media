@@ -45,7 +45,13 @@
       <video id="video-3" class="video" controls muted autoplay></video>
       <video id="video-4" class="video" controls muted autoplay></video>
     </div>
+    <div class="analiz">
+      <canvas id="oscilloscope"></canvas>
+      <button id="analize">Анализировать звук</button>
+    </div>
+
     <script src="./script.js"></script>
+    <script src="./audio.js"></script>
     <script>
       initVideo(
         document.getElementById("video-1"),

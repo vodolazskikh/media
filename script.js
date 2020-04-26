@@ -7,22 +7,21 @@ const brightness = document.querySelector("#brightness");
 
 let fullScreenIndex = undefined;
 
-allVideo.forEach(
-  (video, i) =>
-    (video.onclick = () => {
-      if (typeof fullScreenIndex === "undefined") {
-        video.style.zIndex = 2;
-        video.style.transform = "scale(3)";
-        video.style.position = "absolute";
-        video.style.bottom = "0px";
-        video.style.left = "50%";
-        video.style.marginLeft = "-150px";
-        controls.style.opacity = 1;
-        background.style.opacity = 1;
-        fullScreenIndex = i;
-      }
-    })
-);
+allVideo.forEach((video, i) => {
+  video.onclick = () => {
+    if (typeof fullScreenIndex === "undefined") {
+      video.style.zIndex = 2;
+      video.style.transform = "scale(3)";
+      video.style.position = "absolute";
+      video.style.bottom = "0px";
+      video.style.left = "50%";
+      video.style.marginLeft = "-150px";
+      controls.style.opacity = 1;
+      background.style.opacity = 1;
+      fullScreenIndex = i;
+    }
+  };
+});
 
 showAllButton.onclick = () => {
   console.log("кек", fullScreenIndex);
