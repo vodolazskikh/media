@@ -3,12 +3,17 @@ video {
   transition: transform 400ms linear;
   z-index: 0;
   position: relative;
+  outline: none;
 }
 body {
   margin: 0;
   position: relative;
   display: flex;
   justify-content: center;
+}
+.root {
+  position: relative;
+  margin-top: 50px;
 }
 #background {
   position: absolute;
@@ -23,7 +28,15 @@ body {
   z-index: 1;
   pointer-events: none;
   transition: opacity 200ms linear;
+  display: flex;
+  justify-content: center;
 }
-.root {
-  position: relative;
+#showAll {
+  z-index: 3;
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+#controls {
+  opacity: 0;
 }
