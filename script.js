@@ -2,6 +2,8 @@ const allVideo = [...document.querySelectorAll("video")];
 const background = document.querySelector("#background");
 const showAllButton = document.querySelector("#showAll");
 const controls = document.querySelector("#controls");
+const contrast = document.querySelector("#contrast");
+const brightness = document.querySelector("#brightness");
 
 let fullScreenIndex = undefined;
 
@@ -38,4 +40,17 @@ showAllButton.onclick = () => {
   controls.style.opacity = 0;
   background.style.opacity = 0;
   fullScreenIndex = undefined;
+};
+
+contrast.onchange = (e) => {
+  const video = allVideo[fullScreenIndex];
+  const value = e.currentTarget.value;
+  video.style.filter = `contrast(${value})`;
+};
+
+brightness.onchange = (e) => {
+  const video = allVideo[fullScreenIndex];
+  const value = e.currentTarget.value;
+  console.log(value);
+  video.style.filter = `brightness(${value}%)`;
 };
